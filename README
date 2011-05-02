@@ -1,0 +1,12 @@
+This is a basic Android project written in Scala.
+
+The interesting part is the build.xml which integrates the Scala compiler and Proguard into the Android build process using Ant.
+"ant clean compile install" will build and compile the project and install it on the running Android emulator.
+
+MyAndroidActivity.scala contains the Android activity that is displayed.
+
+Known Issues
+============
+
+The Scala activity does not get picked up by Android so a Java activity inherits from it and is the launcher activity instead.
+This is not an ideal solution but does have the side effect of demonstrating that it is possible to have a mixed Java / Scala project in Android.
