@@ -1,9 +1,31 @@
+Introduction
+============
+
 This is a basic Android project written in Scala.
 
-The interesting part is the build.xml which integrates the Scala compiler and Proguard into the Android build process using Ant.
-"ant clean compile install" will build and compile the project and install it on the running Android emulator.
+None of the tutorials/blogs on the web for writing an Android application in Scala worked for me out of the
+box but by putting together information gathered from various sources, I managed to assemble a working configuration.
 
-MyAndroidActivity.scala contains the Android activity that is displayed.
+The interesting part is the build.xml which integrates the Scala compiler and Proguard into the Android build process using Ant.
+MyAndroidActivity.scala contains the Android activity that is displayed. 
+
+Versions used:
+
+- Android SDK for Linux. v2.2
+- Scala 2.8.1 (JARs included in the project)
+
+How It Works
+============
+
+Diff the build.xml file with the one in <path to Android SDK>/tools/ant/main_rules.xml
+
+The main changes are the addition of the Scala compile step to the build process and then Proguard to shrink the JAR file.
+
+How To Build
+============
+
+Assuming the Android SDK is set up and working on the command line,
+"ant clean compile install" from the project directory will build and compile the project and install it on the running Android emulator.
 
 Known Issues
 ============
