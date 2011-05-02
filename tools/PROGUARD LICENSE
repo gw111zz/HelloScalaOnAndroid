@@ -1,0 +1,8 @@
+Proguard is distributed under the terms of the GPL v2. The license below is taken from the website:
+
+License
+ProGuard is free. You can use it freely for processing your applications, commercial or not. Your code obviously remains yours after having been processed, and its license can remain the same.
+
+ProGuard itself is copyrighted, but its distribution license provides you with some rights for modifying and redistributing its code and its documentation. More specifically, ProGuard is distributed under the terms of the GNU General Public License (GPL), version 2, as published by the Free Software Foundation (FSF). In short, this means that you may freely redistribute the program, modified or as is, on the condition that you make the complete source code available as well. If you develop a program that is linked with ProGuard, the program as a whole has to be distributed at no charge under the GPL. I am granting a special exception to the latter clause (in wording suggested by the FSF), for combinations with the following stand-alone applications: Apache Ant, Apache Maven, the Google Android SDK, the Eclipse ProGuardDT GUI, the EclipseME JME IDE, the Sun NetBeans Java IDE, the Sun JME Wireless Toolkit, the Simple Build Tool for Scala, the Javaground Tools, and the Sanaware Tools.
+
+The ProGuard user documentation represents an important part of this work. It may only be redistributed without changes, along with the unmodified version of the code. 

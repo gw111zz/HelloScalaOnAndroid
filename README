@@ -13,6 +13,7 @@ Versions used:
 
 - Android SDK for Linux. v2.2
 - Scala 2.8.1 (JARs included in the project)
+- Proguard 4.4 (JARs included in the project)
 
 How It Works
 ============
