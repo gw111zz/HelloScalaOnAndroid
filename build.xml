@@ -261,20 +261,14 @@
                     </path>
                 </else>
             </if>
-<!--
-<arg path="${out.absolute.dir}/classes.min.jar" />
-	         <fileset dir="${external.libs.absolute.dir}" includes="*.min.jar" />
-	         <external-libs />
--->
+
             <echo>Converting compiled files and external libraries into ${intermediate.dex.file}...</echo>
             <apply executable="${dx}" failonerror="true" parallel="true">
                 <arg value="--dex" />
                 <arg value="--output=${intermediate.dex.file}" />
                 <extra-parameters />
                 <arg line="${verbose.option}" />
-                <arg path="${out.dex.input.absolute.dir}" />
-                <path refid="out.dex.jar.input.ref" />
-                <external-libs />
+		<fileset dir="${out.absolute.dir}" includes="*.min.jar" />
             </apply>
         </sequential>
     </macrodef>
