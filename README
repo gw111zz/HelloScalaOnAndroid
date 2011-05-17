@@ -12,7 +12,7 @@ MyAndroidActivity.scala contains the Android activity that is displayed.
 Versions used:
 
 - Android SDK for Linux. v2.2
-- Scala 2.8.1 (JARs included in the project)
+- Scala 2.9.0 (JARs included in the project)
 - Proguard 4.4 (JARs included in the project)
 
 How It Works
@@ -33,3 +33,5 @@ Known Issues
 
 The Scala activity does not get picked up by Android so a Java activity inherits from it and is the launcher activity instead.
 This is not an ideal solution but does have the side effect of demonstrating that it is possible to have a mixed Java / Scala project in Android.
+
+There are many Proguard warnings during the build process. These need to be removed.
