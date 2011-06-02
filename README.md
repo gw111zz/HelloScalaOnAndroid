@@ -1,3 +1,10 @@
+Getting Started
+============
+Assuming you have Ant and the latest Android SDK installed.
+
+ * Edit local.properties to point to your sdk folder (or remove it and use android update project --target 1 --path .)
+ * $ ant install
+
 Introduction
 ============
 
