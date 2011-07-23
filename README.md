@@ -18,7 +18,7 @@ MyAndroidActivity.scala contains the Android activity that is displayed.
 
 Versions used:
 
-- Android SDK for Linux. r11
+- Android SDK for Linux. r11 or r12
 - Scala 2.9.0.1 (JARs included in the project)
 - Proguard 4.4  (JARs included in the project)
 
