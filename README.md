@@ -1,8 +1,8 @@
 Getting Started
 ============
-Assuming you have Ant and the latest Android SDK installed.
+Assuming you have Ant and the Android SDK (with tools version r11 or r12, not the latest) installed.
 
- * Edit local.properties to point to your sdk folder (or remove it and use android update project --target 1 --path .)
+ * Edit local.properties to point to your sdk folder
  * $ ant install
 
 Introduction
@@ -18,7 +18,7 @@ MyAndroidActivity.scala contains the Android activity that is displayed.
 
 Versions used:
 
-- Android SDK for Linux. r11+ (also tested on latest r15) 
+- Android SDK for Linux. r11 or r12 (you must use one of these versions as the later Android tools break this project) 
 - Scala 2.9.0.1 (JARs included in the project)
 - Proguard 4.4  (JARs included in the project)
 
