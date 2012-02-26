@@ -1,9 +1,10 @@
 Getting Started
 ============
-Assuming you have Ant and the Android SDK (with tools version r11 or r12, not the latest) installed.
+Assuming you have Ant and the Android SDK (with tools version r16) installed.
 
  * Edit local.properties to point to your sdk folder
- * $ ant install
+ * $ ant clean debug
+ * $ adb install -r bin/MyAndroidActivity-debug.apk
 
 Introduction
 ============
@@ -18,7 +19,7 @@ MyAndroidActivity.scala contains the Android activity that is displayed.
 
 Versions used:
 
-- Android SDK for Linux. r11 or r12 (you must use one of these versions as the later Android tools break this project) 
+- Android SDK for Linux. r16 (To use it with r11 or r12, clone revision e8e44bb4d1fb82d8787506b4b44def34bbc911d6)
 - Scala 2.9.0.1 (JARs included in the project)
 - Proguard 4.4  (JARs included in the project)
 
@@ -33,7 +34,7 @@ How To Build
 ============
 
 Assuming the Android SDK is set up and working on the command line,
-"ant clean compile install" from the project directory will build and compile the project and install it on the running Android emulator.
+"ant clean debug" from the project directory will build and compile the project, then use "adb install <path to built APK file>" to install it on the running Android emulator.
 
 Known Issues
 ============
