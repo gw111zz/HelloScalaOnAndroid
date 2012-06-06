@@ -2,7 +2,7 @@ Getting Started
 ============
 Assuming you have Ant and the Android SDK (with tools version r16) installed.
 
- * Edit local.properties to point to your sdk folder
+ * Create a local.properties and add a line "sdk.dir=<path to your sdk folder>"
  * $ ant clean debug
  * $ adb install -r bin/MyAndroidActivity-debug.apk
 
