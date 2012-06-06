@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="scala-android">
+    <target name="-pre-compile">
+        <!-- structure copied from compile target -->
+        <do-only-if-manifest-hasCode elseText="hasCode = false. Skipping...">
+            <taskdef resource="scala/tools/ant/antlib.xml"
+                     classpath="tools/scala-compiler.jar:tools/scala-library.jar" />
+            <scalac force="changed" deprecation="on"
+                    destdir="${out.classes.absolute.dir}"
+                    bootclasspathref="android.target.classpath">
+                <src path="${source.absolute.dir}" />
+                <src path="${gen.absolute.dir}" />
+                <classpath>
+                    <fileset dir="${jar.libs.absolute.dir}" includes="*.jar" />
+                    <fileset dir="tools" includes="*.jar"/>
+                </classpath>
+            </scalac>
+        </do-only-if-manifest-hasCode>
+    </target>
+
+    <target name="-post-compile">
+        <!-- input for dex will be proguard's output -->
+        <!-- TODO: unfortunately, this completely bypasses the obfuscate target -->
+        <property name="out.dex.input.absolute.dir" value="${out.absolute.dir}/classes.min.jar" />
+        <path id="out.dex.jar.input.ref" />
+
+        <!-- set paths, copied from obfuscate target -->
+        <path id="proguard.configpath">
+            <pathelement path="${proguard.config}"/>
+        </path>
+        <pathconvert pathsep='" -include "' property="proguard.configcmd" refid="proguard.configpath"/>
+        <taskdef resource="proguard/ant/task.properties"
+                 classpath="tools/proguard.jar" />
+
+        <!-- execute proguard -->
+        <proguard>
+            -include      "${proguard.configcmd}"
+            -injars       ${out.classes.absolute.dir}:tools/scala-library.jar(!META-INF/MANIFEST.MF,!library.properties)
+            -outjars      "${out.absolute.dir}/classes.min.jar"
+            -libraryjars  "${android.jar}"
+            -dontwarn     scala.**
+            -dontwarn     sun.**
+            -dontoptimize
+            -dontobfuscate
+        </proguard>
+    </target>
+</project>
