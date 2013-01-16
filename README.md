@@ -2,9 +2,21 @@ Getting Started
 ============
 Assuming you have Ant and the Android SDK (with tools version r16) installed.
 
- * Create a local.properties and add a line "sdk.dir=<path to your sdk folder>"
- * $ ant clean debug
- * $ adb install -r bin/MyAndroidActivity-debug.apk
+ * Create a local.properties and add a line "sdk.dir=<path to your sdk folder>". You can do this automatially with
+
+    $ android update project -p . -t 1
+
+ (don't forget to change your target number if you want different targets)
+
+ * $ ant clean debug install
+
+If the debug apk is already build, you can install it with 
+
+    $ adb install -r bin/MyAndroidActivity-debug.apk
+
+or 
+
+    $ ant installd
 
 Introduction
 ============
