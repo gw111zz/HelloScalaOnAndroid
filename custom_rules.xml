@@ -7,7 +7,7 @@
                      classpath="tools/scala-compiler.jar:tools/scala-library.jar" />
             <scalac force="changed" deprecation="on"
                     destdir="${out.classes.absolute.dir}"
-                    bootclasspathref="android.target.classpath">
+                    bootclasspath="${android.target.classpath}">
                 <src path="${source.absolute.dir}" />
                 <src path="${gen.absolute.dir}" />
                 <classpath>
@@ -42,6 +42,14 @@
             -dontwarn     sun.**
             -dontoptimize
             -dontobfuscate
+            -keep public class * extends android.app.Activity
+            -keep public class * extends android.app.Application
+            -keep public class * extends android.app.Service
+            -keep public class * extends android.content.BroadcastReceiver
+            -keep public class * extends android.content.ContentProvider
+            -keep public class * extends android.app.backup.BackupAgentHelper
+            -keep public class * extends android.preference.Preference
+            -keep public class com.android.vending.licensing.ILicensingService
         </proguard>
     </target>
 </project>
