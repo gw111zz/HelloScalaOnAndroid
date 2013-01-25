@@ -1,6 +1,6 @@
 Getting Started
 ============
-Assuming you have Ant and the Android SDK (with tools version r16) installed.
+Assuming you have Ant and the Android SDK installed.
 
  * Create a local.properties and add a line "sdk.dir=<path to your sdk folder>". You can do this automatially with
 
